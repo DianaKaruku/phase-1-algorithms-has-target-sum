@@ -1,5 +1,6 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+ 
 }
 
 /* 
@@ -9,9 +10,25 @@ function hasTargetSum(array, target) {
 /* 
   Add your pseudocode here
 */
+function hasTargetSum(arr, target) {
+  const seen = new Set();
+
+  for (const num of arr) {
+    const diff = target - num;
+
+    if (seen.has(diff)) {
+      return true;
+    }
+
+    seen.add(num);
+  }
+
+  return false;
+}
 
 /*
   Add written explanation of your solution here
+  
 */
 
 // You can run `node index.js` to view these console logs
